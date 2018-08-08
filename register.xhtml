@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"  
+      xmlns:ui="http://java.sun.com/jsf/facelets"><h:head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="resource/css/bootstrap.css"/>
+<link rel="stylesheet" href="resource/mystyle/home.css"/>
+<link rel="stylesheet" href="resource/mystyle/register.css"/>
+ <link rel="stylesheet" href="resource/mystyle/button.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="resource/js/bootstrap.js"/>
+<script type="text/javascript" src="resource/js/jquery.js"/>
+<title>Register</title>
+</h:head>
+
+<h:body style="background-color:#white">
+ <div id="indexheader">
+	<ui:insert name="indexheader">
+		<ui:include src="indexheader.xhtml" />
+	</ui:insert>
+</div>
+       
+      <!-- -end of header --> 
+            
+
+<div class="container registerfield " style=" margin-top:1.5cm;" >
+<div class="row " >
+<div class="col-sm-4.col-sm-4" style=" margin-left:1.4cm; ">
+<h2 style="font-weight: bold;  margin-top: 20px;  "> Start your free 30-day trial.</h2>
+
+<h3 >Fully functional. No credit card required.</h3>
+</div>
+</div>
+</div>
+<div class="container registerfield"  >
+
+<h:form class="form-horizontal " >
+<div><h:messages style = "color:red;margin:8px;" /></div>
+
+ <div class=" row form-group registerfieldname">
+ <div class="col-sm-2 control-label"><h:outputLabel  >Email Id:</h:outputLabel></div>
+<div class=" col-sm-6"> <h:inputText value="#{register.emailid}" class="  form-control"  id="emailid" required="true" requiredMessage="* Please enter your email id" validatorMessage="Invalid email format"> <f:validateRegex
+		pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" /></h:inputText></div>
+ <h:message for="emailid"  style="color:red;margin:8px;"/> 
+
+</div>
+
+ <div class=" row form-group registerfieldname">
+ <div class="col-sm-2 control-label"><h:outputLabel>Password:</h:outputLabel></div>
+<div class=" col-sm-6"><h:inputText value="#{register.password}"  class="form-control"  id="password" required="true" requiredMessage="* Please enter your password"></h:inputText></div>
+ <h:message for="password"  style="color:red;margin:8px;"/> 
+</div>
+
+ <div class=" row form-group registerfieldname">
+<div class="col-sm-2 control-label"><h:outputLabel>First Name:</h:outputLabel></div>
+<div class=" col-sm-6"><h:inputText value="#{register.firstname}"  class="form-control" id="firstname" required="true" requiredMessage="* Please enter your first name"></h:inputText></div>
+ <h:message for="firstname"  style="color:red;margin:8px;"/> 
+</div>
+
+ <div class=" row form-group registerfieldname">
+<div class="col-sm-2 control-label"><h:outputLabel>Last Name:</h:outputLabel></div>
+<div class="col-sm-6"><h:inputText value="#{register.lastname}"  class="form-control" id="lastname" required="true" requiredMessage="* Please enter your last name"></h:inputText></div>
+ <h:message for="lastname"  style="color:red;margin:8px;"/> 
+</div>
+
+ <div class=" row form-group registerfieldname">
+<div class="col-sm-2 control-label"><h:outputLabel>Short Name:</h:outputLabel></div>
+<div class="col-sm-6"><h:inputText value="#{register.shortname}"  maxlength="4" class="form-control" id="shortname" required="true" requiredMessage="* Please enter your short name"></h:inputText><span style="color:red;">Please enter upto 4 characters</span></div>
+ <h:message for="shortname"  style="color:red;margin:8px;"/> 
+</div>
+ <div class=" row form-group ">
+ <div class="col-sm-2 .col-sm-offset-2"></div>
+<div class="col-sm-6 "><h:commandLink action="#{register.submit()}" value="Submit" class="btn fontsize btn-success btn-block"></h:commandLink></div>
+</div>
+
+</h:form>
+</div>
+
+
+
+</h:body>
+</html>
